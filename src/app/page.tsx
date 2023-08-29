@@ -2,10 +2,12 @@
 import { Button } from '@chakra-ui/react'
 import Image from 'next/image'
 import { useChain } from "@cosmos-kit/react";
+import { wallets } from "@cosmos-kit/fin"
 
 export default function Home() {
-    const { username, connect, disconnect, wallet, status } = useChain("cosmoshub");
-  
+    const { username, connect, disconnect, wallet, status } = useChain("SeiTestnet");
+    console.log('wallets', wallets);
+    
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -32,7 +34,7 @@ export default function Home() {
           </a>
         </div>
         <div onClick={() => connect()}>
-        <Button >Connect Wallet</Button>
+        <Button >Connect Wallet NE</Button>
         </div>
         
       </div>
